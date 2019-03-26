@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+
+  apache:
+    image: ronasit/php-nginx-dev:7.3
+    working_dir: /app
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./:/app
+    links:
+      - mysql
+      - mysql_test
+      - redis
+    environment:
+      XDEBUG_REMOTE_AUTOSTART: "on"
+      XDEBUG_PROFILER_ENABLE: 0
+      WEB_DOCUMENT_ROOT: /app/public
+      WEB_DOCUMENT_INDEX: index.php
+      REDIS_PORT: "6379"
+      XDEBUG_REMOTE_CONNECT_BACK: 0
+      XDEBUG_REMOTE_PORT: 9000
+      XDEBUG_REMOTE_HOST: host.docker.internal
+      php.xdebug.max_nesting_level: 250
+
+  mysql:
+    ports:
+      - 3308:3306
+    image: mysql:5.7
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "mysqldb"
+
+  mysql_test:
+    ports:
+      - 3307:3306
+    image: mysql:5.7
+    volumes:
+      - ./:/app
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: "mysqldb"
+
+  redis:
+    ports:
+      - 6380:6379
+    image: redis:5.0
+    volumes:
+      - ./:/app

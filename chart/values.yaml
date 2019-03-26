@@ -1,0 +1,46 @@
+replicaCount: 1
+
+persistence:
+  enabled: true
+  storage: 1Gi
+
+ingress:
+  enabled: true
+
+cronjobs:
+  enabled: true
+
+worker:
+  enabled: true
+  replicaCount: 1
+  cmd: "php /app/artisan queue:work --sleep=3 --tries=3"
+
+postgres:
+  enabled: true
+  postgresUser: 'pguser'
+  postgresPassword: 'bC&(HBIAcda'
+  postgresDatabase: 'pgdb'
+  persistence:
+    enabled: true
+    size: 1Gi
+
+mysql:
+  enabled: false
+  imageTag: "5.7.14"
+  mysqlRootPassword: 'eqihd#H!H#j2r32'
+  mysqlUser: 'pguser'
+  mysqlPassword: 'WRINI#FN$@i@@'
+  mysqlDatabase: 'pgdb'
+  persistence:
+    enabled: true
+    size: 1Gi
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 50m
+    limits:
+      memory: 512Mi
+      cpu: 150m
+
+redis:
+  enabled: true
