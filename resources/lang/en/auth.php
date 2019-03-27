@@ -13,6 +13,12 @@ return [
     |
     */
 
+    'name' => 'Name',
+    'email' => 'E-mail',
+    'password' => 'Password',
+    'confirm_password' => 'Confirm password',
+    'register' => 'Register',
+    'login' => 'Login',
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
