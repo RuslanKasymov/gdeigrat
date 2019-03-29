@@ -102,13 +102,10 @@
                 <div class="col-12 col-md-6">
                     <div class="footer-data">
                         <div class="footer-nav">
-                            <a href="" class="animate">Игрокам</a><a href="" class="animate">Организаторам</a><a href=""
-                                                                                                                 class="animate">О
-                                сайте</a>
+                            <a href="" class="animate">Игрокам</a><a href="" class="animate">Организаторам</a><a href="" class="animate">О сайте</a>
                         </div>
                         <div class="footer-text">
-                            Находясь на нашем сайте вы подписываете <a href="" class="animate">пользовательское
-                                соглашение</a>
+                            Находясь на нашем сайте вы подписываете <a href="" class="animate">пользовательское соглашение</a>
                         </div>
                     </div>
                 </div>
@@ -117,10 +114,7 @@
     </footer>
 </div>
 <script src="{{ asset('js/jquery.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>
