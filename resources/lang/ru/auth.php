@@ -17,7 +17,7 @@ return [
     'name' => 'Имя пользователя',
     'email' => 'E-mail',
     'password' => 'Пароль',
-    'confirm_password' => 'Подтвердите',
+    'confirm_password' => 'Плдтверждение пароля',
     'register' => 'Регистрация',
     'login' => 'Войти',
     'failed' => 'Имя пользователя и пароль не совпадают.',

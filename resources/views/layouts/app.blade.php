@@ -47,7 +47,6 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
                                     @csrf
@@ -142,7 +141,6 @@
                             </nav>
                         </div>
                     @endguest
-
                 </div>
                 <div class="col-6 col-md-3 order-md-last">
                     <div class="filter-main">
@@ -171,7 +169,6 @@
                         </nav>
                     </div>
                     <div class="title d-md-block d-none">Новости</div>
-
                     <div class="news-block">
                         <div class="news-one">
                             <div class="author-img">
@@ -243,9 +240,7 @@
     </footer>
 </div>
 <script src="{{ asset('js/jquery.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 </body>

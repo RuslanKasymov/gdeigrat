@@ -130,18 +130,6 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
-        'name' => [
-            'unique_in_current_budget' => 'Имя категории должно быть уникальным!',
-        ],
-        'type_id' => [
-            'not_prohibited_type_id' => 'Нельзя использовать данный тип!',
-        ],
-        'category_loan_id' => [
-            'check_accessible_category' => 'Категория не может быть использована! Тип категории не является доступным для создания операции.',
-        ],
-        'category_id' => [
-            'check_accessible_category' => 'Категория не может быть использована! Тип категории не является доступным для создания операции.',
-        ],
     ],
 
     /*
