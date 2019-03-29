@@ -1,16 +1,22 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
+Route::group([
+
+    'prefix' => 'user',
+
+], function ($router) {
+
+    Route::post('/', 'UserController@create');
+
+//    Route::post('update-password', 'UserController@updatePassword');
+//    Route::get('me', 'UserController@getAuthenticatedUser')->middleware('jwt.verify');
+
+//    Route::post('forgot-password', 'AuthController@forgotPassword');
+//    Route::post('reset-password', 'AuthController@resetPassword');
+//
+//    Route::get('refresh', 'AuthController@refresh')->middleware('jwt.verify');
+});
+Auth::routes();
