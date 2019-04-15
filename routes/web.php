@@ -9,7 +9,7 @@ Route::group([
 
 ], function ($router) {
 
-    Route::post('/', 'UserController@create');
+    Route::post('/', 'RegisterController@create');
 
 //    Route::post('update-password', 'UserController@updatePassword');
 //    Route::get('me', 'UserController@getAuthenticatedUser')->middleware('jwt.verify');
