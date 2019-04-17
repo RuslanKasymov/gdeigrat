@@ -24,34 +24,6 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('auth.surname') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="surname" value="{{ old('surname') }}">
-
-                                @if ($errors->has('surname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('surname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('auth.city') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city') }}">
-
-                                @if ($errors->has('city'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('city') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('auth.phone') }}</label>
 
@@ -69,52 +41,11 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('auth.email') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('auth.avatar') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="avatar" type="file" name="avatar" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}">
-
-                                @if ($errors->has('avatar'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('avatar') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('auth.address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}">
-
-                                @if ($errors->has('address'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('auth.date_of_birth') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="date_of_birth" type="text" class="form-control{{ $errors->has('date_of_birth') ? ' is-invalid' : '' }}" name="date_of_birth" value="{{ old('date_of_birth') }}">
-
-                                @if ($errors->has('date_of_birth'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('date_of_birth') }}</strong>
                                     </span>
                                 @endif
                             </div>
