@@ -5,11 +5,11 @@ Route::get('/', function () {
 });
 Route::group([
 
-    'prefix' => 'user',
+    'prefix' => 'users',
 
 ], function ($router) {
 
-    Route::post('/', 'RegisterController@create');
+    Route::get('/{id}', 'UserController@get');
 //    Route::post('/avatar', 'RegisterController@updateAvatar');
 
 //    Route::post('update-password', 'UserController@updatePassword');

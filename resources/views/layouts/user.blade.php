@@ -38,7 +38,7 @@
                             </div>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="top-start"
                                  style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -116px, 0px);">
-                                <a class="dropdown-item" href="#user/{{ Auth::user()->id }}">Профиль</a>
+                                <a class="dropdown-item" href="user/{{ Auth::user()->id }}">Профиль</a>
                                 <a class="dropdown-item" href="#">Редактировать</a>
                                 <a class="dropdown-item" href="#">Помощь</a>
                                 <div class="dropdown-divider"></div>
@@ -143,31 +143,6 @@
                     @endguest
                 </div>
                 <div class="col-6 col-md-3 order-md-last">
-                    <div class="filter-main">
-                        <nav class="navbar-expand-md">
-                            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse"
-                                    data-target="#filter" aria-controls="filter" aria-expanded="false"
-                                    aria-label="Toggle navigation">
-                                <span class="icon-equalizer"></span> Фильтр
-                            </button>
-                            <div class="collapse navbar-collapse flex-wrap" id="filter">
-                                <div class="title">Фильтр</div>
-
-                                <div class="filter">
-                                    <div class="city">
-                                        <div class="filter-name">Город:</div>
-                                        Москва
-                                    </div>
-                                    <div class="sport-type-f">
-                                        <div class="filter-name">Вид:</div>
-                                        Все
-                                    </div>
-                                    <div class="org-f">Только организаторы:
-                                        <input type="checkbox" name="" id=""></div>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
                     <div class="title d-md-block d-none">Новости</div>
                     <div class="news-block">
                         <div class="news-one">
@@ -242,5 +217,7 @@
 <script src="{{ asset('js/jquery.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+<script src="{{ asset('js/cbpFWTabs.js') }}"></script>
+
 </body>
 </html>
