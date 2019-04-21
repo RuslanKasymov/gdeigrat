@@ -10,15 +10,11 @@ Route::group([
 ], function ($router) {
 
     Route::get('/{id}', 'UserController@get');
-//    Route::post('/avatar', 'RegisterController@updateAvatar');
+    Route::get('/{id}/edit', 'UserController@edit');
 
-//    Route::post('update-password', 'UserController@updatePassword');
-//    Route::get('me', 'UserController@getAuthenticatedUser')->middleware('jwt.verify');
+    Route::post('/{id}/update', 'UserController@updateUserData');
+    Route::post('/{id}/updateAvatar', 'UserController@updateAvatar');
 
-//    Route::post('forgot-password', 'AuthController@forgotPassword');
-//    Route::post('reset-password', 'AuthController@resetPassword');
-//
-//    Route::get('refresh', 'AuthController@refresh')->middleware('jwt.verify');
 });
 
 
