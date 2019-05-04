@@ -25,7 +25,6 @@ Route::group([
 ], function ($router) {
 
 //    Route::post('/', 'RegisterController@create');
-    Route::post('/avatar', 'RegisterController@updateAvatar');
     //    $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 //    $this->post('register', 'Auth\RegisterController@register');
 });

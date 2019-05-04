@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\User\UpdateUserRequest;
+use App\Models\User;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -30,8 +32,14 @@ class UserController extends Controller
         return view('user.edit', compact('user'));
     }
 
-    public function updateUserData($userId, UpdateRequest $request)
+    public function updateUserData($userId, UpdateUserRequest $request)
     {
+        User::where('id', $userId)
+            ->update($request->only(['name','surname','email','phone','city']));
+        $user = $this->userService->get($userId);
+
+        $success = 'Ваш профиль успешно обновлен!';//нужно как то отправить
+       return redirect("users/$userId/edit");
 
     }
 
@@ -62,7 +70,17 @@ class UserController extends Controller
             $user->save();
         }
 
-        return redirect("/users/$user->id/edit");
+        $success_update_avatar = 'Ваше фото успешно обновлено!';
+//        return redirect()->route('profile', [$user,]);
+        return view('user.edit', compact(['user','success_update_avatar']));
+//        return redirect()->action(
+//            'UserController@profile', ['id' => 1]
+//        );
+    }
+
+    public function getAuthenticated()
+    {
+        return auth()->user();
     }
 
     private function getPathToAvatars($file)
