@@ -14,9 +14,6 @@
             <div>{{$success_update_avatar}}</div>
         @endif
     </div>
-    @if(!empty($success))
-        <div>{{$success}}</div>
-    @endif
     <div class="auth-form">
         <form method="POST" action="/users/{{ $user->id }}/update">
             @csrf
@@ -75,7 +72,5 @@
             </label>
             <button class="btn-gp">Сохранить</button>
         </form>
-    </div>
-    <div class="auth-form">Поменять пароль
     </div>
 @endsection
