@@ -38,8 +38,8 @@
                             </div>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="top-start"
                                  style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, -116px, 0px);">
-                                <a class="dropdown-item" href="users/{{ Auth::user()->id }}">Профиль</a>
-                                <a class="dropdown-item" href="#">Редактировать</a>
+                                <a class="dropdown-item" href="/users/{{ Auth::user()->id }}">Профиль</a>
+                                <a class="dropdown-item" href="/users/{{ Auth::user()->id }}/edit">Редактировать</a>
                                 <a class="dropdown-item" href="#">Помощь</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
