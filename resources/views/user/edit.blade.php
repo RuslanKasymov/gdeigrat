@@ -11,10 +11,13 @@
             <input type="submit" class="pull-right btn btn-sm btn-primary">
         </form>
         @if(!empty($success_update_avatar))
-            <div>{{$success_update_avatar}}</div>
+            <div>Ваше фото успешно обновлено!</div>
         @endif
     </div>
     <div class="auth-form">
+        @if(!empty($success))
+            <div>Ваш профиль успешно обновлён!</div>
+        @endif
         <form method="POST" action="/users/{{ $user->id }}/update">
             @csrf
             <label>

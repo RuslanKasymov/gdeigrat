@@ -25,21 +25,22 @@ class UserController extends Controller
         return view('user.profile', compact('user'));
     }
 
-    public function edit($userId)
+    public function edit($userId, Request $request)
     {
         $user = $this->userService->get($userId);
 
-        return view('user.edit', compact('user'));
+        $success = $request->input('success');
+        $success_update_avatar = $request->input('success_update_avatar');
+
+        return view('user.edit', compact(['user', 'success', 'success_update_avatar']));
     }
 
     public function updateUserData($userId, UpdateUserRequest $request)
     {
         User::where('id', $userId)
             ->update($request->only(['name', 'surname', 'email', 'phone', 'city']));
-        $success = 'Ваш профиль успешно обновлен!';
 
-        return redirect("users/$userId/edit")->with(['success' => $success]);
-
+        return redirect("users/$userId/edit?success=1");
     }
 
     public function updateAvatar($userId, Request $request)
@@ -69,8 +70,7 @@ class UserController extends Controller
             $user->save();
         }
 
-        $success_update_avatar = 'Ваше фото успешно обновлено!';
-        return redirect("users/$userId/edit")->with(['success_update_avatar' => $success_update_avatar]);
+        return redirect("users/$userId/edit?success_update_avatar=1");
     }
 
     public function getAuthenticated()
