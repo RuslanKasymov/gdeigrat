@@ -28,8 +28,47 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $followers = 0;
+    protected $maintainers = 0;
+    protected $is_follower = false;
+
     public function isOnline()
     {
         return Cache::has('user-is-online-' . $this->id);
+    }
+
+    public function getFollowersCount()
+    {
+        return $this->followers;
+    }
+
+    public function setFollowersCount($value)
+    {
+        $this->followers = $value;
+    }
+
+    public function getMaintainersCount()
+    {
+        return $this->maintainers;
+    }
+
+    public function setMaintainersCount($value)
+    {
+        $this->maintainers = $value;
+    }
+
+    public function getIsFollowerFlag()
+    {
+        return $this->is_follower;
+    }
+
+    public function setIsFollowerFlag($value)
+    {
+        $this->is_follower = $value;
+    }
+
+    public function followers()
+    {
+        return $this->hasMany(Follower::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\User\UpdateUserRequest;
 use App\Models\User;
+use App\Services\FollowService;
 use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -18,9 +19,18 @@ class UserController extends Controller
         $this->userService = app(UserService::class);
     }
 
-    public function get($userId)
+    public function get($userId, FollowService $followService)
     {
         $user = $this->userService->get($userId);
+
+        $user->setFollowersCount($followService->getFollowers($userId)->count());
+        $user->setMaintainersCount($followService->getMaintainers($userId)->count());
+
+        if (!empty($this->getAuthenticated() && $followService->exists(['maintainer_id' => $userId, 'follower_id' => $this->getAuthenticated()->id]))) {
+            $user->setIsFollowerFlag(true);
+        } else {
+            $user->setIsFollowerFlag(false);
+        }
 
         return view('user.profile', compact('user'));
     }

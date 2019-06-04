@@ -17,6 +17,8 @@ Route::group([
 
 });
 
+Route::post('follow', 'FollowController@follow');
+Route::post('unfollow', 'FollowController@unfollow');
 
 Route::group([
 

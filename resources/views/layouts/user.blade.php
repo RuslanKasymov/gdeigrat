@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'Где играть') }}</title>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}?p=1"/>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?ver=3"/>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
@@ -200,13 +200,12 @@
                 <div class="col-12 col-md-6">
                     <div class="footer-data">
                         <div class="footer-nav">
-                            <a href="" class="animate">Игрокам</a><a href="" class="animate">Организаторам</a><a href=""
-                                                                                                                 class="animate">О
-                                сайте</a>
+                            <a href="" class="animate">Игрокам</a>
+                            <a href="" class="animate">Организаторам</a>
+                            <a href="" class="animate">Осайте</a>
                         </div>
                         <div class="footer-text">
-                            Находясь на нашем сайте вы подписываете <a href="" class="animate">пользовательское
-                                соглашение</a>
+                            Находясь на нашем сайте вы подписываете <a href="" class="animate">пользовательскоесоглашение</a>
                         </div>
                     </div>
                 </div>
@@ -214,7 +213,35 @@
         </div>
     </footer>
 </div>
+<div class="modal fade" id="goRegistrationModal" tabindex="-1" role="dialog" aria-labelledby="goRegistrationModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="title">Авторизуйтесь или зарегестрируйтесь!</div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Процесс регистрации занимает не более 5 минут
+            </div>
+            <div class="modal-footer justify-content-around">
+                <a href="{{ route('login') }}"><button class="btn-gp">{{ __('auth.login') }}</button></a>
+                <a href="{{ route('register') }}"><button class="btn-gp">{{ __('auth.register') }}</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alert alert-success" id="success-alert">
+    <button type="button" class="close m_l-1" data-dismiss="alert">x</button>
+    <span class="success-message"></span>
+</div>
+<div class="alert alert-danger" id="danger-alert">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <span class="danger-message"></span>
+</div>
 <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/cbpFWTabs.js') }}"></script>

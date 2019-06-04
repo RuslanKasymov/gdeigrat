@@ -505,6 +505,19 @@ font-size: 1rem;
 .p-1-0{
     padding: 1rem 0;
 }
+.display-none{
+    display: none;
+}
+#success-alert, #danger-alert{
+    position: fixed;
+    right: 3rem;
+    top: 3rem;
+    text-align: right;
+    display: none;
+}
+.m_l-1{
+    margin-left: 1rem;
+}
 @media screen and (min-width: 575px){
 }
 @media screen and (max-width: 1200px){
