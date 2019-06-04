@@ -17,4 +17,9 @@ class UserService
     {
         return $this->userRepository->get($id);
     }
+
+    public function getAuthenticated()
+    {
+        return auth()->user();
+    }
 }

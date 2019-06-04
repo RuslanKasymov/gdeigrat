@@ -6,19 +6,30 @@
         <div class="row">
             <div class="col-4">
                 <div class="user-img">
-                    <img src="{{  "$user->avatar" }}" alt="{{ $user->name }}">
+                    <img src="{{  $user['avatar'] }}" alt="{{ $user['name'] }}">
                 </div>
+                @guest
+                    <button class="btn-gp" data-toggle="modal" data-target="#goRegistrationModal">{{ __('follow.follow') }}</button>
+                @else
+                    @if (Auth::user()->id !== $user['id'])
+                            <form id="follow-form" action="" method="POST">
+                                @csrf
+                                <label><input type="number" name="maintainer_id" id="maintainer_id" value="{{ $user['id'] }}" hidden></label>
+                                <button class="btn-gp" id="follow-button">{{ $user->getIsFollowerFlag() ? __('follow.unfollow') : __('follow.follow') }}</button>
+                            </form>
+                    @endif
+                @endguest
             </div>
             <div class="col-8">
                 <div class="profile-name">
-                    {{ $user->surname ? "$user->name $user->surname" : $user->name }}
+                    {{ $user['surname'] ? $user['name'] . $user['surname'] : $user['name'] }}
                     <div class="profile-city">{{ $user->city?:''}}</div>
                 </div>
                 <div class="user-status">@if($user->isOnline()) Online @endif</div>
                 <div class="user-stat-info d-flex justify-content-between">
                     <div class="usi-one">
                         <div class="usi-num">
-                            256
+                            {{ $user->getFollowersCount()}}
                         </div>
                         <div class="usi-text">
                             подписчиков
@@ -35,7 +46,7 @@
                     </div>
                     <div class="usi-one">
                         <div class="usi-num">
-                            54
+                            {{ $user->getMaintainersCount()}}
                         </div>
                         <div class="usi-text">
                             подписок
